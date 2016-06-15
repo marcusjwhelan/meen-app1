@@ -1,8 +1,17 @@
+{{!--app/templates/quote.hbs--}}
+<div class="container">  
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Quotes!</h1>
+            {{#each model as |quote|}}
+                {{#link-to 'quote.edit' quote.id}}
+                    Quote: {{quote.quote}}
+                {{/link-to}}<br/>
+                    Author: {{quote.author}}<br/><br/>
+            {{/each}}
 
-Quotes!<br/>  
-
-{{#each model as |quote|}}
-    Quote: {{ quote.quote }}<br/>  
-    Author: {{ quote.author }}<br/>
-
-{{/each}}
+        </div>
+        {{!-- edit --}}
+            {{outlet}}
+    </div>
+</div>

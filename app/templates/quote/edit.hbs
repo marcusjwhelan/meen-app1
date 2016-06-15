@@ -1,0 +1,22 @@
+{{!-- app/templates/quote/edit.hbs --}}
+
+<div class="col-md-4">  
+    <h2> Edit Quote</h2>
+    {{!-- if this action is moved to the other button it reloads
+        the entire page?--}}
+    <form {{action 'save' on="submit"}}> {{!--PUT--}}
+        <dl>
+            <dt>
+                <p>Quote:</p> {{textarea value=model.quote cols="40" rows="1"}}
+            </dt>
+            <dt>
+                <p>Author:</p> {{textarea value=model.author cols="20" rows="1"}}
+            </dt>
+        </dl>
+        <div class="row">
+            <button type="submit" class="btn btn-primary">Done</button>
+            <button type="delete" class="btn btn-primary" 
+                {{action 'del' on='click'}}>Destroy</button>{{!--DELETE--}}
+        </div>
+    </form>
+</div>  
