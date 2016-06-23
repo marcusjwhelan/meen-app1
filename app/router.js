@@ -10,6 +10,7 @@ Router.map(function() {
     this.route('edit',{
       path: ':quote_id'
     });
+    this.route('new');
   });
 });
 
